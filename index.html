@@ -33,20 +33,11 @@
     </div>
 
     <div id="dashboard">
-        <form action="" id="cdSprint">
-            <label for="">Descrição</label>
-            <textarea name="descrição" id="desc" cols="30" rows="10"></textarea>
-    
-            <label for="">Data: </label>
-            <input type="date" name="data" id="data">
-    
-            <label for="">Numero de Tarefas</label>
-            <input type="number" name="numTarefas" id="nT">
-            
-            <label for="">Numero de Tarefas Realizadas</label>
-            <input type="number" name="numTarefasFeitas" id="nTR">
-            <input type="submit" id="cadastra" value="Cadastra">
-        </form>
+        <section>
+            <ul id="sprints">
+                <li class="li-sprint"><div class="newSprint"><h4>Sprint1</h4> <p>Descrição...</p> <span>30/10/2022</span> <div id="num">3/4</div> </div><i class="bi bi-pencil-fill" id="att"></i> <i class="bi bi-archive-fill" id="delet"></i></li>
+             </ul>
+        </section>
 
 
         <button id="addSprint"> <i class="bi bi-plus-lg"></i> Nova Sprint</button>
