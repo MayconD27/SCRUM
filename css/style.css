@@ -8,12 +8,13 @@ body{
     background-size: cover;
     font-family: Arial, Helvetica, sans-serif;
     background-image: url('../img/fundo.png');
-    height: 100vh;
+    
 }
 main{
     margin: 5% 0;
     padding: 0 30px;
     box-sizing: border-box;
+    overflow: hidden;
 }
 ul{
     display: flex;
@@ -24,7 +25,7 @@ li{
     color: #592c0c;
     padding: 0 10px;
     font-weight: bolder;
-    font-size: 12px;
+    font-size: 15px;
 
 }
 a{
@@ -42,12 +43,14 @@ a:hover{
     margin: 30px 0;
     display: flex;
     flex-wrap: wrap-reverse;
+    height: max-content;
     
 }
 .apresent{
     min-width: 250px;
     width: 50%;
     color: #592c0c;
+    height: 300px;
 }
 h1{
     text-align: center;
@@ -55,16 +58,17 @@ h1{
 }
 p{
     text-align: center;
-    font-size: 10px;
+    font-size: 14px;
     color: #393737b3;
     width: 50%;
     margin: 0 auto;
-    font-weight: bolder;
+    
 }
 form{
     padding: 40px 0;
     margin: 0 auto;
     width: 50%;
+    height: 300px;
     
 }
 #eye{
@@ -89,7 +93,7 @@ input{
     border: none;
     background-color: transparent;
     outline: none;
-    font-size: 12px;
+    font-size: 15px;
     z-index: 9999;
     width: 90%;
     color:#592c0c;
@@ -98,7 +102,7 @@ label{
     position: absolute;
     left: 0;
     top: 0;
-    font-size: 10px;
+    font-size: 13px;
     color: #592c0c95;
     z-index: -9999;
     transition: .5s;
@@ -114,10 +118,12 @@ label{
     left: 0;
     margin: 15px;
     transition: .6s;
+    cursor: pointer;
 }
 .btnEntrar:hover{
     box-shadow: #592c0c82 3px 3px 10px;
     transition: .6s;
+    
 }
 .btnEntrar input{
     margin: 15px 0;
@@ -128,6 +134,9 @@ label{
     height: 20px;
     top:-10px;
     width: 100%;
+    text-align: start;
+    padding-left: 45px;
+    cursor: pointer;
 }
 .btnEntrar i{
     position: absolute;
@@ -136,6 +145,6 @@ label{
     top:6px;
 }
 form a{
-     font-size: 10px;
+     font-size: 13px;
      color: #ffffff;
 }

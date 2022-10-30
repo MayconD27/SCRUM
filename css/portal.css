@@ -1,0 +1,141 @@
+*{
+	margin: 0px;
+	padding: 0px;
+}
+body{
+	background-color: #f9f9f9;
+}
+#icone {
+	cursor: pointer;
+	padding: 15px;
+	position: absolute;
+	z-index: 999;
+	font-size: 30px;
+	color: #592c0c;
+	font-weight: bolder;
+	top:-15px;
+	
+}
+
+#check{
+	display: none;
+	z-index: 99999;
+}
+
+.barra{
+	background-color:#8d705b;
+	height: 100%;
+	width: 300px;
+	position: absolute;
+	left: -300px;
+	transition: all .2s linear;
+	z-index: 99;
+	top: 0;
+	
+}
+
+.barra .link{
+	list-style: none;
+	
+
+}
+
+nav{
+	width: 100%;
+	position: absolute;
+	top: 60px;
+}
+nav a{
+	text-decoration: none;
+}
+
+.link{
+	color: #f4f4f9;
+	font-family: 'Arial';
+	font-size: 12pt;
+	padding: 20px;
+	transition:  all .2s linear;
+	opacity: 0;
+	margin-top: 200px;
+}
+.link:hover{
+	background-color: #592c0c;
+}
+
+#check:checked ~ .barra nav a .link{
+	opacity: 1;
+	margin-top: 0;
+	transition-delay: .2s;
+}
+#check:checked ~ .barra{
+	transform: translateX(300px);
+
+}
+
+#dashboard{
+	position: absolute;
+	right: 10px;
+	margin-top:10px ;
+	width: 100%;
+	
+	
+
+}
+#addSprint{
+	position: fixed;
+	right: 20px;
+	bottom: 20px;
+	z-index: -999;
+}
+header{
+	background-color: #f9f9f9;
+	width: 100%;
+	display: flex;
+	justify-content: end;
+	gap: 20px;
+	box-shadow: 2px 0 5px rgba(0, 0, 0, 0.052);
+	padding: 5px 0;
+}
+header i{
+	color:#592c0c; 
+	display: inline;
+	font-size: 20px;
+	padding: 0 10px;
+}
+h2{
+	width: max-content;
+	color:#592c0c;
+	font-family: arial;
+	font-size: 16px;
+	padding: 2px 0;
+	font-weight: lighter;
+	
+}
+.sair{
+	color: #f4f4f9b1;
+	font-size: 12px;
+	position:absolute;
+	bottom: 20px;
+	display: block;
+	text-decoration: none;
+	left:120px;
+	background-color: #592c0c;
+	padding: 5px;
+	width: 35px;
+	height: 35px;
+	border-radius: 10px;
+
+}
+.sair i{
+	display: block;
+	font-size: 20px;
+	margin: 0 auto;
+	text-align: center;
+	font-family: Arial, Helvetica, sans-serif;
+}
+.sair p{
+	width: 100%;
+	text-align: center;
+	font-size: 15px;
+	font-family: Arial, Helvetica, sans-serif;
+}
