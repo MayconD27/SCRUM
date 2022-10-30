@@ -20,11 +20,11 @@
 
 #dashboard section{
     position: absolute;
-    right: 1%;
-    max-height: 500px;
+    right: 5%;
     overflow: auto;
+    max-height: 560px;
     width: 50%;
-    padding: 20px;
+    padding: 0 10px;
     box-sizing: border-box;
 }
 *::-webkit-scrollbar {
@@ -36,14 +36,16 @@ section::-webkit-scrollbar-thumb {
     
   }
   table{
-    
-    margin: 0 50px;
-    padding: 10px 0;
-   
+    display: block;
+    margin: 0 auto;
+    padding: 10px 10px;
+    width: 80%;
+    box-sizing: border-box;
+
   }
   td{
-    width: max-content;
-    padding: 10px 2px;
+
+    padding: 10px 0px;
   }
 
   .li-sprint{
@@ -52,8 +54,8 @@ section::-webkit-scrollbar-thumb {
 .li-sprint .newSprint{
     position: relative;
     background-color: #fff;
-    max-width: 400px;
-    min-width: 250px;
+    max-width: 500px;
+    min-width: 400px;
     border-radius: 5px;
     box-shadow: 5px 4px 5px rgba(0, 0, 0, 0.178);
     padding: 5px;
