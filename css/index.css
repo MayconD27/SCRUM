@@ -5,7 +5,6 @@
     border: none;
     padding: 5px 20px;
     border-radius: 10px;
-    z-index: 9999;
     cursor: pointer;
 }
 #addSprint:hover{
@@ -17,15 +16,22 @@
     text-shadow: 0 0 10px rgb(234, 255, 1);
     transition: .5s;
 }
-
+#dashboard{
+    position: relative;;
+    width: 100%;
+}
 #dashboard section{
     position: absolute;
-    right: 5%;
     overflow: auto;
-    max-height: 560px;
-    width: 50%;
-    padding: 0 10px;
+    right: 0;
+    max-height: 88vh;
+    width: 60%;
     box-sizing: border-box;
+}
+@media only screen and (max-width: 600px) {
+    #dashboard section{
+        width: 90%;
+    }  
 }
 *::-webkit-scrollbar {
     width: 8px;
@@ -37,9 +43,8 @@ section::-webkit-scrollbar-thumb {
   }
   table{
     display: block;
-    margin: 0 auto;
     padding: 10px 10px;
-    width: 80%;
+    width: 100%;
     box-sizing: border-box;
 
   }
@@ -54,8 +59,9 @@ section::-webkit-scrollbar-thumb {
 .li-sprint .newSprint{
     position: relative;
     background-color: #fff;
-    max-width: 500px;
-    min-width: 400px;
+    max-width: 700px;
+    width: 50vw;
+    min-width: 100px;
     border-radius: 5px;
     box-shadow: 5px 4px 5px rgba(0, 0, 0, 0.178);
     padding: 5px;
@@ -80,10 +86,11 @@ section::-webkit-scrollbar-thumb {
 .li-sprint i{
     background-color: #fff;
     box-shadow: 5px 4px 5px rgba(0, 0, 0, 0.178);
-    padding: 5px;
+    padding: 10px;
     border-radius: 50%;
     color: #782b18;
     cursor: pointer;
+    margin: 10px
 
 }
 .li-sprint i:hover{

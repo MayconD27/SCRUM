@@ -1,7 +1,6 @@
 #grafic{
     width: 70%;
-    
-    height: 300px;
+    height: 50vh;
     margin-top: 10px;
     margin: 0 auto;
 }
@@ -48,10 +47,10 @@
     border-radius: 3px;
     color: #fff;
     position: relative;
-    font-size: 15px;
+    font-size: 1.5EM;
 }
 marquee{
-    font-size: 15px;
+    font-size: 1.5em;
     background-color: #fff;
     box-shadow: 1px 0 5px rgba(0, 0, 0, 0.17);
 }

@@ -15,7 +15,7 @@
 
 <body>
 
-        <input type="checkbox" id="check">
+        <input type="checkbox" id="check" checked>
         <label for="check" ><i class="bi bi-list" id="icone"></i></label>
         <header>
             <h2 id="user">Usuario Teste</h2><i class="bi bi-person-fill"></i>
@@ -44,20 +44,21 @@
         <div class="itens">
             <span>
                 <h3>Quantidade de Demandas</h3>
-                <p id="ntDemandas">10</p>
+                <p id="ntDemandas" class="time">10</p>
                 <i class="bi bi-diagram-3-fill"></i>
 
             </span>
 
             <span>
                 <h3>Demandas Concluidas</h3>
-                <p id="ntDemandas">8</p>
+                <p id="ntDemandas"  data-from="0" data-to="100"
+                data-speed="5000" data-refresh-interval="50" class="time">8</p>
                 <i class="bi bi-check-circle"></i>
             </span>
 
             <span>
                 <h3>Demandas em atraso</h3>
-                <p id="nDAtraso">2</p>
+                <p id="nDAtraso" class="time">2</p>
                 <i class="bi bi-x-circle"></i>
             </span>
         </div>
@@ -66,7 +67,8 @@
 
         
     </div>
-    
+    <script src="js/jquery.js"></script>
+    <script src="js/jqueryCoutTo.js"></script>
     <script type="text/javascript">
         var sprint = ['sprint1','sprint2','sprint3', 'sprint4', 'sprint5', 'sprint6'];
 
@@ -89,13 +91,15 @@
             name: 'ideal',
             type: 'line',
             data: ideal,
-            color: '#ccb5a5'
+            color: '#ccb5a5',
+            smooth: true
           },
           {
             name: 'real',
             type: 'line',
             data: real,
-            color: '#592c0c'
+            color: '#592c0c',
+            smooth: true
           }
         ]
       };

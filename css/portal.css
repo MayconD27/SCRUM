@@ -7,11 +7,11 @@ body{
 }
 #icone {
 	cursor: pointer;
-	padding: 15px;
+	padding: 20px;
 	position: absolute;
-	z-index: 999;
+	z-index: 99;
 	font-size: 30px;
-	color: #592c0c;
+	color: #fff;
 	font-weight: bolder;
 	top:-15px;
 	
@@ -19,19 +19,22 @@ body{
 
 #check{
 	display: none;
-	z-index: 99999;
+	
 }
 
 .barra{
-	background-color:#8d705b;
+	background-color:#9e785c;
 	height: 100%;
 	width: 300px;
 	position: absolute;
 	left: -300px;
 	transition: all .2s linear;
-	z-index: 99;
+	z-index: 5;
 	top: 0;
 	
+}
+.barra i{
+	padding: 0 10px;
 }
 
 .barra .link{
@@ -44,6 +47,7 @@ nav{
 	width: 100%;
 	position: absolute;
 	top: 60px;
+	
 }
 nav a{
 	text-decoration: none;
@@ -51,8 +55,8 @@ nav a{
 
 .link{
 	color: #f4f4f9;
-	font-family: 'Arial';
 	font-size: 12pt;
+	font-family:'arial' ;
 	padding: 20px;
 	transition:  all .2s linear;
 	opacity: 0;
@@ -85,44 +89,45 @@ nav a{
 	position: fixed;
 	right: 20px;
 	bottom: 20px;
-	z-index: -999;
+	
 }
 header{
-	background-color: #f9f9f9;
+	position: relative;
+	background-color: #592c0c;
 	width: 100%;
 	display: flex;
-	justify-content: end;
+	justify-content:space-between;
 	gap: 20px;
 	box-shadow: 2px 0 5px rgba(0, 0, 0, 0.052);
-	padding: 5px 0;
+	padding: 10px 0;
+	font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+	z-index: 9;
 }
 header i{
-	color:#592c0c; 
+	color:#fff; 
 	display: inline;
-	font-size: 20px;
-	padding: 0 10px;
+	font-size: 1.3em;
+	padding: 0 20px;
 }
 h2{
 	width: max-content;
-	color:#592c0c;
+	color:#fff;
 	font-family: arial;
-	font-size: 16px;
+	font-size: 1.2em;
 	padding: 2px 0;
 	font-weight: lighter;
+	margin: 0 60px;
+	
 	
 }
 .sair{
-	color: #f4f4f9b1;
-	font-size: 12px;
+	color: #fff;
+	font-size: 4em;
 	position:absolute;
 	bottom: 20px;
 	display: block;
 	text-decoration: none;
 	left:120px;
-	background-color: #592c0c;
-	padding: 5px;
-	width: 35px;
-	height: 35px;
 	border-radius: 10px;
 
 }
@@ -139,3 +144,4 @@ h2{
 	font-size: 15px;
 	font-family: Arial, Helvetica, sans-serif;
 }
+

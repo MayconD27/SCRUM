@@ -1,0 +1,17 @@
+.inputmodal{
+    display: block;
+    width: 80%;
+    margin: 0 auto;
+    height: 50px;
+    border-radius: 5px;
+    border: 1px rgb(238, 238, 238) solid;
+    outline: none;
+    padding: 0 5px;
+    font-size: 1em;
+    font-family: 'arial';
+    resize: none;
+}
+textarea{
+    overflow: auto;
+    height: 80px;
+}
