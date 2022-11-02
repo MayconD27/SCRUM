@@ -38,7 +38,7 @@
             
          
         </nav>	
-        <a href="" class="sair"><i class="bi bi-house"></i><p>sair</p></a>
+        <a href="logout.php" class="sair"><i class="bi bi-house"></i><p>sair</p></a>
     </div>
 
     <div id="dashboard">
