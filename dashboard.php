@@ -1,3 +1,12 @@
+<?php
+    session_start();
+    $usuarioLogado = isset($_SESSION['logado']) ?  $_SESSION['logado'] : false;
+
+
+    $nomeUsuario = isset($_SESSION['nome']) ?  $_SESSION['nome'] : 'Sem nome';
+?>
+
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -15,10 +24,10 @@
 
 <body>
 
-        <input type="checkbox" id="check" checked>
+        <input type="checkbox" id="check" >
         <label for="check" ><i class="bi bi-list" id="icone"></i></label>
         <header>
-            <h2 id="user">Usuario Teste</h2><i class="bi bi-person-fill"></i>
+        <?php  echo "<h2>$nomeUsuario</h2>" ?><i class="bi bi-person-fill"></i>
         </header>
 
     <div class="barra">	
@@ -44,21 +53,35 @@
         <div class="itens">
             <span>
                 <h3>Quantidade de Demandas</h3>
-                <p id="ntDemandas" class="time">10</p>
+                <?php
+                  $teste1 = 100;
+                  echo " <p id='ntDemandas' data-from='0' data-to='$teste1'
+                  data-speed='5000' data-refresh-interval='50'  class='time'></p>";
+
+                ?>
                 <i class="bi bi-diagram-3-fill"></i>
 
             </span>
 
             <span>
                 <h3>Demandas Concluidas</h3>
-                <p id="ntDemandas"  data-from="0" data-to="100"
-                data-speed="5000" data-refresh-interval="50" class="time">8</p>
+                <?php
+                  $teste2 = 70;
+                  echo " <p id='ntDemandas' data-from='0' data-to='$teste2'
+                  data-speed='5000' data-refresh-interval='50'  class='time'></p>";
+
+                ?>
                 <i class="bi bi-check-circle"></i>
             </span>
 
             <span>
                 <h3>Demandas em atraso</h3>
-                <p id="nDAtraso" class="time">2</p>
+                <?php
+                  $teste3 = 30;
+                  echo " <p id='ntDemandas' data-from='0' data-to='$teste3'
+                  data-speed='5000' data-refresh-interval='50'  class='time'></p>";
+
+                ?>
                 <i class="bi bi-x-circle"></i>
             </span>
         </div>

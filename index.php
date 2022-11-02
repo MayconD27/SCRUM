@@ -8,7 +8,6 @@
     }
 
     $nomeUsuario = isset($_SESSION['nome']) ?  $_SESSION['nome'] : 'Sem nome';
-    $idUsuario = isset($_SESSION['id']) ?  $_SESSION['id'] : '0';
 ?>
 
 <!DOCTYPE html>
@@ -32,7 +31,7 @@
         <input type="checkbox" id="check" checked>
         <label for="check" ><i class="bi bi-list" id="icone"></i></label>
         <header>
-          <?php  echo "<h2>$nomeUsuario</h2>" ?><i class="bi bi-person-fill"></i>
+          <?php  echo "<h2>$nomeUsuario</h2>" ?> <i class="bi bi-person-fill"></i>
         </header>
 
     <div class="barra">	
@@ -67,6 +66,7 @@
     <script src="js/sweetalert2.js"></script>
     <script src="js/jquery.js"></script>
     <script src="js/script.js"></script>
+    <script src="js/modal.js"></script>
     
 
 </body>

@@ -147,3 +147,6 @@ h2{
 	font-family: Arial, Helvetica, sans-serif;
 }
 
+.swal-modal {
+    text-align: center;
+}
