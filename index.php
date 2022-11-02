@@ -1,3 +1,16 @@
+<?php
+    session_start();
+    $usuarioLogado = isset($_SESSION['logado']) ?  $_SESSION['logado'] : false;
+
+    if($usuarioLogado== false){
+        header('location: login.php');
+        exit;
+    }
+
+    $nomeUsuario = isset($_SESSION['nome']) ?  $_SESSION['nome'] : 'Sem nome';
+    $idUsuario = isset($_SESSION['id']) ?  $_SESSION['id'] : '0';
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -19,18 +32,18 @@
         <input type="checkbox" id="check" checked>
         <label for="check" ><i class="bi bi-list" id="icone"></i></label>
         <header>
-            <h2 id="user">Usuario Teste</h2><i class="bi bi-person-fill"></i>
+          <?php  echo "<h2>$nomeUsuario</h2>" ?><i class="bi bi-person-fill"></i>
         </header>
 
     <div class="barra">	
         <nav>
-            <a href="index.html"><div class="link"><i class="bi bi-diagram-3-fill"></i> Sprint</div></a>
-            <a href="dashboard.html"><div class="link"><i class="bi bi-graph-down"></i>  Gráfico de Bundown </div></a>
+            <a href="index.php"><div class="link"><i class="bi bi-diagram-3-fill"></i> Sprint</div></a>
+            <a href="dashboard.php"><div class="link"><i class="bi bi-graph-down"></i>  Gráfico de Bundown </div></a>
 
             
          
         </nav>	
-        <a href="" class="sair"><i class="bi bi-house"></i><p>sair</p></a>
+        <a href="logout.php" class="sair"><i class="bi bi-house"></i><p>sair</p></a>
     </div>
 
     <div id="dashboard">

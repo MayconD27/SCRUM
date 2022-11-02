@@ -1,3 +1,13 @@
+<?php
+    session_start();
+    $usuarioLogado = isset($_SESSION['logado']) ?  $_SESSION['logado'] : false;
+
+    if($usuarioLogado== true){
+        header('location: index.php');
+        exit;
+    }
+
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -5,7 +15,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro Scrum</title>
+    <title>LOGIN</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -15,13 +25,14 @@
     <nav>
       <ul>
           <li class="active">Entrar</li>
-          <li><a href="cadastro.html">Cadastrar</a></li>
+          <li><a href="cadastro.php">Cadastrar</a></li>
       </ul>
     </nav>
 
     <div class="container">
       <div class="apresent">
-        <form action="" method="post">
+
+        <form action="logar.php" method="post">
           <div class="cx_input"><input type="email" name="email">  <label for="email">E-mail</label></div>
           <div class="cx_input senha"><input type="password" name="senha" id="txtPass">  <label for="email">Senha</label> <img src="img/eye.svg" alt="" id="eye"></div>
           <a href="">Esqueceu a senha?</a>

@@ -23,8 +23,8 @@
 
     <div class="barra">	
         <nav>
-            <a href="index.html"><div class="link"><i class="bi bi-diagram-3-fill"></i> Sprint</div></a>
-            <a href="dashboard.html"><div class="link"><i class="bi bi-graph-down"></i>  Gráfico de Bundown </div></a>
+            <a href="index.php"><div class="link"><i class="bi bi-diagram-3-fill"></i> Sprint</div></a>
+            <a href="dashboard.php"><div class="link"><i class="bi bi-graph-down"></i>  Gráfico de Bundown </div></a>
 
             
          
