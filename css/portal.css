@@ -110,7 +110,7 @@ header i{
 	font-size: 1.3em;
 	padding: 0 20px;
 }
-h2{
+#nome{
 	width: max-content;
 	color:#fff;
 	font-family: arial;
@@ -149,4 +149,7 @@ h2{
 
 .swal-modal {
     text-align: center;
+}
+h2{
+	font-family: Arial, Helvetica, sans-serif;
 }

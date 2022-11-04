@@ -27,7 +27,7 @@
         <input type="checkbox" id="check" >
         <label for="check" ><i class="bi bi-list" id="icone"></i></label>
         <header>
-        <?php  echo "<h2>$nomeUsuario</h2>" ?><i class="bi bi-person-fill"></i>
+        <?php  echo "<h2 id='nome'>$nomeUsuario</h2>" ?><i class="bi bi-person-fill"></i>
         </header>
 
     <div class="barra">	

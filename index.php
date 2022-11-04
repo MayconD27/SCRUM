@@ -31,7 +31,7 @@
         <input type="checkbox" id="check" checked>
         <label for="check" ><i class="bi bi-list" id="icone"></i></label>
         <header>
-          <?php  echo "<h2>$nomeUsuario</h2>" ?> <i class="bi bi-person-fill"></i>
+          <?php  echo "<h2 id='nome'>$nomeUsuario</h2>" ?> <i class="bi bi-person-fill"></i>
         </header>
 
     <div class="barra">	
@@ -52,7 +52,7 @@
                     <tr class="li-sprint">
                         <td><div class="newSprint"><h4>Sprint1</h4> <p>Descrição...</p> <span>30/10/2022</span> <div id="num">3/4</div> </div></td>
                         <td><i class="att bi bi-pencil-fill"></i></td>
-                        <td><i class="delet bi bi-archive-fill"></i></td>
+                        <td><i onclick='deletar()'  class="delet bi bi-archive-fill"></i></td>
                     </tr>
                     </table>
             </div>
@@ -64,9 +64,9 @@
         <button id="addSprint"> <i class="bi bi-plus-lg"></i> Nova Sprint</button>
     </div>
     <script src="js/sweetalert2.js"></script>
-    <script src="js/jquery.js"></script>
-    <script src="js/script.js"></script>
+    <script src="js/jquery.js"></script>   
     <script src="js/modal.js"></script>
+    <script src="js/script.js"></script>
     
 
 </body>

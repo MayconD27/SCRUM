@@ -4,11 +4,11 @@ document.getElementById('addSprint').addEventListener('click',()=>{
     title: 'CADASTRAR SPRINT',
     html:
     '<form action="login.html" method="post" id= "form">'+ 
-    '<input type="text" id="nome" class="inputmodal" name="nome" placeholder="Nome da Sprint"><br>'+
-    '<textarea name="desc" id="desc" cols="20" rows="10" placeholder="descrição" class="inputmodal"></textarea> <br>'+
-    '<input type="number" id="nDemandC" name="nDemandC" placeholder="Demandas Concluídas" class="inputmodal"><br>'+
-    '<input type="number" id="nDemand" name="nDemand" placeholder="Total de Demandas" class="inputmodal"><br>'+
-    '<input type="date" id="data" name="data" placeholder="Total de Demandas" class="inputmodal"><br>'+
+    '<input type="text" id="nome_input" class="inputmodal" name="nome" placeholder="Nome da Sprint"><br>'+
+    '<textarea name="desc" id="desc_input" cols="20" rows="10" placeholder="descrição" class="inputmodal"></textarea> <br>'+
+    '<input type="number" id="nDemandC_input" name="nDemandC" placeholder="Demandas Concluídas" class="inputmodal"><br>'+
+    '<input type="number" id="nDemand_input" name="nDemand" placeholder="Total de Demandas" class="inputmodal"><br>'+
+    '<input type="date" id="data" name="data_input" placeholder="Total de Demandas" class="inputmodal"><br>'+
 
   '</form>',
   confirmButtonText: `CADASTRAR`,
@@ -22,7 +22,8 @@ document.getElementById('addSprint').addEventListener('click',()=>{
   })
   
 });
-$('.delet').click(function(){
+
+function deletar(){
   Swal.fire({
     title: 'Are you sure?',
     text: "You won't be able to revert this!",
@@ -37,7 +38,9 @@ $('.delet').click(function(){
         'Deleted!',
         'Your file has been deleted.',
         'success'
+        
       )
+      $(this).parent().parent().remove();
     }
   })
-})
+};
