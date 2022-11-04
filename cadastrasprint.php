@@ -12,12 +12,10 @@
     }
     else{
         
-        $sql = "INSERT INTO sprint VALUE (NULL,'1', :nome, :descri, $nDemandC,$nDemand:dataSpr)";
+        $sql = "INSERT INTO sprint VALUE (NULL,2, :nome, :descri, $nDemandC,$nDemand,:dataSpr)";
         $resultado = $bd->prepare($sql);
         $resultado->bindParam(':nome', $nome);
         $resultado->bindParam(':descri', $desc);
-        $resultado->bindParam(':nDemandC', $nDemandC);
-        $resultado->bindParam(':nDemand', $nDemand);
         $resultado->bindParam(':dataSpr', $data);
         $registro = $resultado->execute();
         header('location: index.php');

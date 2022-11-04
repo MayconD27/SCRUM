@@ -49,12 +49,24 @@
         <section>
             <div class="cont">
                 <table id="sprints">
-                    <tr class="li-sprint">
-                        <td><div class="newSprint"><h4>Sprint1</h4> <p>Descrição...</p> <span>30/10/2022</span> <div id="num">3/4</div> </div></td>
-                        <td><i onclick='atualizar()' class="att bi bi-pencil-fill"></i></td>
-                        <td><i onclick='deletar()'  class="delet bi bi-archive-fill"></i></td>
-                    </tr>
-                    </table>
+                    <?php
+                    include_once "bd.php";
+
+                    $sql = "SELECT * FROM sprint";
+        
+                    $resultado = $bd->query($sql);
+                    $registros = $resultado->fetchAll();
+                      foreach ($registros as $sprint) {            
+                            print ('
+                                <tr class="li-sprint">
+                                <td><div class="newSprint"><h4>'.$sprint["sprint"].'</h4> <p>'.$sprint["descricao"].'</p> <span>'.$sprint["data"].'</span> <div id="num">'.$sprint["demandaConcluida"].'/'.$sprint["demandaTotal"].'</div> </div></td>
+                                <td><i onclick=.'.'atualizar()'.' class="att bi bi-pencil-fill"></i></td>
+                                <td><i onclick='.'deletar()'.'  class="delet bi bi-archive-fill"></i></td>
+                                </tr>
+                            ');
+                        } 
+                    
+                    ?>  
             </div>
            
            
