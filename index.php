@@ -60,7 +60,7 @@
                             print ('
                                 <tr class="li-sprint">
                                 <td><div class="newSprint"><h4>'.$sprint["sprint"].'</h4> <p>'.$sprint["descricao"].'</p> <span>'.$sprint["data"].'</span> <div id="num">'.$sprint["demandaConcluida"].'/'.$sprint["demandaTotal"].'</div> </div></td>
-                                <td><i onclick=.'.'atualizar()'.' class="att bi bi-pencil-fill"></i></td>
+                                <td><i onclick='.'atualizar()'.' class="att bi bi-pencil-fill"></i></td>
                                 <td><i onclick='.'deletar()'.'  class="delet bi bi-archive-fill"></i></td>
                                 </tr>
                             ');
