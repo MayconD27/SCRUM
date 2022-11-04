@@ -51,7 +51,7 @@
                 <table id="sprints">
                     <tr class="li-sprint">
                         <td><div class="newSprint"><h4>Sprint1</h4> <p>Descrição...</p> <span>30/10/2022</span> <div id="num">3/4</div> </div></td>
-                        <td><i class="att bi bi-pencil-fill"></i></td>
+                        <td><i onclick='atualizar()' class="att bi bi-pencil-fill"></i></td>
                         <td><i onclick='deletar()'  class="delet bi bi-archive-fill"></i></td>
                     </tr>
                     </table>
