@@ -56,7 +56,7 @@
                 <?php
                   $teste1 = 100;
                   echo " <p id='ntDemandas' data-from='0' data-to='$teste1'
-                  data-speed='5000' data-refresh-interval='50'  class='time'></p>";
+                  data-speed='2000' data-refresh-interval='50'  class='time'></p>";
 
                 ?>
                 <i class="bi bi-diagram-3-fill"></i>
@@ -68,7 +68,7 @@
                 <?php
                   $teste2 = 70;
                   echo " <p id='ntDemandas' data-from='0' data-to='$teste2'
-                  data-speed='5000' data-refresh-interval='50'  class='time'></p>";
+                  data-speed='2000' data-refresh-interval='50'  class='time'></p>";
 
                 ?>
                 <i class="bi bi-check-circle"></i>
@@ -79,7 +79,7 @@
                 <?php
                   $teste3 = 30;
                   echo " <p id='ntDemandas' data-from='0' data-to='$teste3'
-                  data-speed='5000' data-refresh-interval='50'  class='time'></p>";
+                  data-speed='2000' data-refresh-interval='50'  class='time'></p>";
 
                 ?>
                 <i class="bi bi-x-circle"></i>
