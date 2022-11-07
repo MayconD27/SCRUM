@@ -23,7 +23,8 @@ document.getElementById('addSprint').addEventListener('click',()=>{
   
 });
 
-function deletar(){
+
+async  function deletar(id){
   Swal.fire({
     title: 'Deseja deletar a sprint',
     text: "Fazendo isso você não terá mais acesso a ela.",
@@ -40,8 +41,11 @@ function deletar(){
         'Your file has been deleted.',
         'success'
         
+        
       )
-      $(this).parent().parent().remove();
+      console.log( 'sucesso '+  id);
+      open('./deletsprint.php?id='+id);
+      /*$(this).parent().parent().remove();*/
     }
   })
 };
