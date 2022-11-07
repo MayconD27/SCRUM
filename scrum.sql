@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 04-Nov-2022 às 01:44
+-- Tempo de geração: 04-Nov-2022 às 22:39
 -- Versão do servidor: 10.4.24-MariaDB
 -- versão do PHP: 8.1.6
 
@@ -37,6 +37,13 @@ CREATE TABLE `sprint` (
   `data` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Extraindo dados da tabela `sprint`
+--
+
+INSERT INTO `sprint` (`id`, `usuario`, `sprint`, `descricao`, `demandaConcluida`, `demandaTotal`, `data`) VALUES
+(1, 2, 'Sprint1', 'laba laba laba', 10, 20, '2022-10-20');
+
 -- --------------------------------------------------------
 
 --
@@ -55,9 +62,9 @@ CREATE TABLE `usuario` (
 --
 
 INSERT INTO `usuario` (`id`, `nome`, `email`, `senha`) VALUES
-(1, 'Maycon', 'mds@mds', 'dw5id7TfBaNnu3g'),
-(2, 'Maycon', 'md@11', '152ImlYpkGRpYMq'),
-(3, 'Rony', 'r@gmail', 'yu5NWAECkgt1oJ9WXF9eMw==');
+(3, 'Rony', 'r@gmail', 'yu5NWAECkgt1oJ9WXF9eMw=='),
+(4, 'Marina Rezende', 'mari@11', 'jeQXvkYdV1TR4XUqNGTWxA=='),
+(5, 'Maycon', 'mds@12', 'aLU8IViiVwhQXmjvagMlgw==');
 
 --
 -- Índices para tabelas despejadas
@@ -67,8 +74,7 @@ INSERT INTO `usuario` (`id`, `nome`, `email`, `senha`) VALUES
 -- Índices para tabela `sprint`
 --
 ALTER TABLE `sprint`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `usuario` (`usuario`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Índices para tabela `usuario`
@@ -85,13 +91,13 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de tabela `sprint`
 --
 ALTER TABLE `sprint`
-  MODIFY `id` tinyint(3) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` tinyint(3) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de tabela `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `id` tinyint(4) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` tinyint(4) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
