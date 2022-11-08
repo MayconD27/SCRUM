@@ -73,6 +73,7 @@ function atualizar(id){
     '<input type="date" id="data_input" name="data" placeholder="Total de Demandas" class="inputmodal"><br>'+
 
   '</form>',
+  width: 600,
   confirmButtonText: `ATUALIZAR`,
   confirmButtonColor: "#592c0c",
   })
