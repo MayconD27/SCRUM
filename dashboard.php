@@ -129,14 +129,14 @@
         yAxis: {},
         series: [
           {
-            name: 'ideal',
+            name: 'Tempo de Trabalho Ideal',
             type: 'line',
             data: ideal,
             color: '#ccb5a5',
             smooth: true
           },
           {
-            name: 'real',
+            name: 'Tempo de Trabalho Real',
             type: 'line',
             data: real,
             color: '#592c0c',
