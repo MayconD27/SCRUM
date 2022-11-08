@@ -1,9 +1,16 @@
 <?php
+    include_once "bd.php";
     session_start();
     $usuarioLogado = isset($_SESSION['logado']) ?  $_SESSION['logado'] : false;
 
 
     $nomeUsuario = isset($_SESSION['nome']) ?  $_SESSION['nome'] : 'Sem nome';
+
+
+    $sql = "SELECT SUM(demandaTotal) AS 'qntTotal',SUM(demandaConcluida) AS 'qntConcluida' FROM sprint";
+    $resultado = $bd->prepare($sql);
+    $resultado->execute();
+    $registrosQnt = $resultado->fetchAll();
 ?>
 
 
@@ -44,18 +51,25 @@
     <div id="dashboard">
         
         <div class="novidades">
-            <span>Novidades</span>
-            <marquee behavior="" direction="">
-                Texto de exemplo de adição de nova srpint
-            </marquee>
+          
+             <span>Novidades</span>
+             <?php
+                 $sql = "SELECT * FROM sprint ORDER BY dataSprint DESC ";
+                 $resultado = $bd->prepare($sql);
+                 $resultado->execute();
+                 $registrosNovidade = $resultado->fetchAll();
+                 $descri = $registrosNovidade[0]['descricao'];
+                 echo "<marquee behavior='' direction=''>$descri</marquee>";
+                
+            ?>
         </div>
 
         <div class="itens">
             <span>
                 <h3>Quantidade de Demandas</h3>
                 <?php
-                  $teste1 = 100;
-                  echo " <p id='ntDemandas' data-from='0' data-to='$teste1'
+                  $qntDemandas = $registrosQnt[0]['qntTotal'];
+                  echo " <p id='ntDemandas' data-from='0' data-to='$qntDemandas'
                   data-speed='2000' data-refresh-interval='50'  class='time'></p>";
 
                 ?>
@@ -66,8 +80,9 @@
             <span>
                 <h3>Demandas Concluidas</h3>
                 <?php
-                  $teste2 = 70;
-                  echo " <p id='ntDemandas' data-from='0' data-to='$teste2'
+                 
+                  $qntConcluida = $registrosQnt[0]['qntConcluida'];
+                  echo " <p id='ntDemandas' data-from='0' data-to='$qntConcluida'
                   data-speed='2000' data-refresh-interval='50'  class='time'></p>";
 
                 ?>
@@ -77,8 +92,8 @@
             <span>
                 <h3>Demandas em atraso</h3>
                 <?php
-                  $teste3 = 30;
-                  echo " <p id='ntDemandas' data-from='0' data-to='$teste3'
+                   $qntAtraso = $qntDemandas-$qntConcluida;
+                  echo " <p id='ntDemandas' data-from='0' data-to='$qntAtraso'
                   data-speed='2000' data-refresh-interval='50'  class='time'></p>";
 
                 ?>
@@ -94,6 +109,8 @@
     <script src="js/jqueryCoutTo.js"></script>
     <script type="text/javascript">
       $('.time').countTo();
+
+
         var sprint = ['sprint1','sprint2','sprint3', 'sprint4', 'sprint5', 'sprint6'];
 
         var real = [110, 80, 60, 45, 25, 0]
@@ -104,7 +121,7 @@
       var option = {
         tooltip: {},
         legend: {
-          data: ['ideal', 'real']
+          data: ['Tempo de Trabalho Ideal', 'Tempo de Trabalho Real']
         },
         xAxis: {
           data: sprint

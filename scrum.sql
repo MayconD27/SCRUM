@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 04-Nov-2022 às 22:39
+-- Tempo de geração: 08-Nov-2022 às 02:01
 -- Versão do servidor: 10.4.24-MariaDB
 -- versão do PHP: 8.1.6
 
@@ -34,15 +34,18 @@ CREATE TABLE `sprint` (
   `descricao` text NOT NULL,
   `demandaConcluida` tinyint(4) NOT NULL,
   `demandaTotal` tinyint(4) NOT NULL,
-  `data` date NOT NULL
+  `dataSprint` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Extraindo dados da tabela `sprint`
 --
 
-INSERT INTO `sprint` (`id`, `usuario`, `sprint`, `descricao`, `demandaConcluida`, `demandaTotal`, `data`) VALUES
-(1, 2, 'Sprint1', 'laba laba laba', 10, 20, '2022-10-20');
+INSERT INTO `sprint` (`id`, `usuario`, `sprint`, `descricao`, `demandaConcluida`, `demandaTotal`, `dataSprint`) VALUES
+(14, 2, 'Karine', 'A Karine está explicando a curva ABC', 10, 20, '2022-10-20'),
+(15, 2, 'Evaldo', 'Evaldo Está escutando a Karine', 10, 20, '2022-10-20'),
+(16, 2, 'Maycon', 'ok', 12, 30, '2022-12-10'),
+(17, 2, 'Sprint Grandona', 'asdadadsadsadadsadasdsa dslxsakdlsakdlçaskda dsdlksajdklasjda sakldajsdlka dklsajkdlasj sakdjkaslk dalksdjaslk dlksajdkla lakdjslk sldkjaslk laskjdsalk daskljdlas dklsakda klsadjas dakljd salkdajsl sdlkasj sldka sldksja adlkad salkdas askldaskl dlkasdjka askdja dkalsjdas askldjsa asdksaj asdklsa adkasjdaj adkjsalk daskldjasl daskdjasjd daklsdja kdsajdlas daskldjaks daksldjlka dasjdklaj dasjhdlkas dashd ahdslk', 10, 10, '2022-12-13');
 
 -- --------------------------------------------------------
 
@@ -53,7 +56,7 @@ INSERT INTO `sprint` (`id`, `usuario`, `sprint`, `descricao`, `demandaConcluida`
 CREATE TABLE `usuario` (
   `id` tinyint(4) UNSIGNED NOT NULL,
   `nome` varchar(255) NOT NULL,
-  `email` varchar(255) NOT NULL,
+  `email` varchar(50) NOT NULL,
   `senha` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -64,7 +67,8 @@ CREATE TABLE `usuario` (
 INSERT INTO `usuario` (`id`, `nome`, `email`, `senha`) VALUES
 (3, 'Rony', 'r@gmail', 'yu5NWAECkgt1oJ9WXF9eMw=='),
 (4, 'Marina Rezende', 'mari@11', 'jeQXvkYdV1TR4XUqNGTWxA=='),
-(5, 'Maycon', 'mds@12', 'aLU8IViiVwhQXmjvagMlgw==');
+(5, 'Maycon', 'mds@12', 'aLU8IViiVwhQXmjvagMlgw=='),
+(6, 'Maycon', 'md@11', '152ImlYpkGRpYMq3ry5i0A==');
 
 --
 -- Índices para tabelas despejadas
@@ -91,13 +95,13 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de tabela `sprint`
 --
 ALTER TABLE `sprint`
-  MODIFY `id` tinyint(3) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` tinyint(3) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT de tabela `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `id` tinyint(4) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` tinyint(4) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

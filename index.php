@@ -1,4 +1,6 @@
 <?php
+    error_reporting(E_ERROR);
+
     session_start();
     $usuarioLogado = isset($_SESSION['logado']) ?  $_SESSION['logado'] : false;
 
@@ -56,16 +58,19 @@
         
                     $resultado = $bd->query($sql);
                     $registros = $resultado->fetchAll();
-                    $id = $registros[0]['id'];
-                      foreach ($registros as $sprint) {            
-                            print ('
-                                <tr class="li-sprint">
-                                <td><div class="newSprint"><h4>'.$sprint["sprint"].'</h4> <p>'.$sprint["descricao"].'</p> <span>'.$sprint["data"].'</span> <div id="num">'.$sprint["demandaConcluida"].'/'.$sprint["demandaTotal"].'</div> </div></td>
-                                <td><i onclick='."atualizar($id)".' class="att bi bi-pencil-fill"></i></td>
-                                <td><i id='."$id". ' onclick='.'deletar('.$sprint['id'].')'.'  class="delet bi bi-archive-fill"></i></td>
-                                </tr>
-                            ');
-                        } 
+                    foreach ($registros as $sprint) { 
+                        $id_sprint =openssl_encrypt(
+                            $sprint['id'], "AES-256-CBC", "OKGoogle",
+                        ); 
+                                  
+                        print ("
+                            <tr class='li-sprint'>
+                            <td><div class='newSprint'><h4>".$sprint["sprint"]."</h4> <p>".$sprint["descricao"]."</p> <span>".date("d/m/Y", strtotime($sprint["dataSprint"]))."</span> <div id='num'>".$sprint["demandaConcluida"]."/".$sprint["demandaTotal"]."</div> </div></td>
+                            <td><i onclick=" ."atualizar('$id_sprint')"." class='att bi bi-pencil-fill'></i></td>
+                            <td><i onclick=" ."deletar('$id_sprint')"." class='delet bi bi-archive-fill'></i></td>
+                            </tr>
+                        ");
+                    } 
                     
                     ?>  
             </div>

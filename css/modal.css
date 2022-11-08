@@ -9,9 +9,22 @@
     padding: 0 5px;
     font-size: 1em;
     font-family: 'arial';
-    resize: none;
 }
 textarea{
     overflow: auto;
-    height: 80px;
+    width: 80%;
+    border-radius: 5px;
+    border: 1px rgb(238, 238, 238) solid;
+    outline: none;
+    padding: 10px 5px;
+    font-size: 1em;
+    font-family: 'arial';
+    resize: none;
+}
+.numbers{
+    width: 83%;
+    display: flex;
+    gap: 5px;
+    margin: 0 auto;
+    
 }

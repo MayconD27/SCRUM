@@ -5,12 +5,13 @@ document.getElementById('addSprint').addEventListener('click',()=>{
     html:
     '<form action="./cadastrasprint.php" method="post" id= "form">'+ 
     '<input type="text" id="nome_input" class="inputmodal" name="nome" placeholder="Nome da Sprint"><br>'+
-    '<textarea name="desc" id="desc_input" cols="20" rows="10" placeholder="descrição" class="inputmodal"></textarea> <br>'+
-    '<input type="number" id="nDemandC_input" name="nDemandC" placeholder="Demandas Concluídas" class="inputmodal"><br>'+
-    '<input type="number" id="nDemand_input" name="nDemand" placeholder="Total de Demandas" class="inputmodal"><br>'+
+    '<textarea name="desc" id="desc_input" cols="50" rows="10" placeholder="Descrição"></textarea> <br>'+
+    '<div class="numbers"> <input type="number" id="nDemand_input" name="nDemand" placeholder="Total de Demandas" class="inputmodal">'+
+    '<input type="number" id="nDemandC_input" name="nDemandC" placeholder="Demandas Concluídas" class="inputmodal"> </div><br>'+
     '<input type="date" id="data_input" name="data" placeholder="Total de Demandas" class="inputmodal"><br>'+
 
   '</form>',
+  width: 600,
   confirmButtonText: `CADASTRAR`,
   confirmButtonColor: "#592c0c",
   })
@@ -24,7 +25,7 @@ document.getElementById('addSprint').addEventListener('click',()=>{
 });
 
 
-async  function deletar(id){
+function deletar(id){
   Swal.fire({
     title: 'Deseja deletar a sprint',
     text: "Fazendo isso você não terá mais acesso a ela.",
@@ -36,30 +37,40 @@ async  function deletar(id){
     cancelButtonText: 'Cancelar'
   }).then((result) => {
     if (result.isConfirmed) {
-      Swal.fire(
-        'Deleted!',
-        'Your file has been deleted.',
-        'success'
+      
+
+      var configuracao = { 
+        method: 'POST',
+        body: new URLSearchParams({ 'id': id, }),
+     };
+
+      fetch('./deletsprint.php', configuracao)
+      .then(function(response) {
+        Swal.fire(
+          'Deleted!',
+          'Your file has been deleted.',
+          'success'
+        ).then((result)=>{
+          location.reload();
+        })
         
-        
-      )
-      console.log( 'sucesso '+  id);
-      open('./deletsprint.php?id='+id);
-      /*$(this).parent().parent().remove();*/
+      })
+      
     }
+    
   })
 };
 
-function atualizar(){
+function atualizar(id){
   Swal.fire({
     title: 'ATUALIZAR SPRINT',
     html:
-    '<form action="login.html" method="post" id= "form">'+ 
+    '<form action="./atualizarsprint.php" method="post" id= "form">'+ 
     '<input type="text" id="nome_input" class="inputmodal" name="nome" placeholder="Nome da Sprint"><br>'+
-    '<textarea name="desc" id="desc_input" cols="20" rows="10" placeholder="descrição" class="inputmodal"></textarea> <br>'+
-    '<input type="number" id="nDemandC_input" name="nDemandC" placeholder="Demandas Concluídas" class="inputmodal"><br>'+
-    '<input type="number" id="nDemand_input" name="nDemand" placeholder="Total de Demandas" class="inputmodal"><br>'+
-    '<input type="date" id="data" name="data_input" placeholder="Total de Demandas" class="inputmodal"><br>'+
+    '<textarea name="desc" id="desc_input" cols="50" rows="10" placeholder="Descrição" ></textarea> <br>'+
+    '<div class="numbers"> <input type="number" id="nDemand_input" name="nDemand" placeholder="Total de Demandas" class="inputmodal">'+
+    '<input type="number" id="nDemandC_input" name="nDemandC" placeholder="Demandas Concluídas" class="inputmodal"> </div><br>'+
+    '<input type="date" id="data_input" name="data" placeholder="Total de Demandas" class="inputmodal"><br>'+
 
   '</form>',
   confirmButtonText: `ATUALIZAR`,
