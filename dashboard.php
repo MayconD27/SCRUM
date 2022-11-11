@@ -1,13 +1,14 @@
 <?php
     include_once "bd.php";
     session_start();
+    $id =  $_SESSION['id'];
     $usuarioLogado = isset($_SESSION['logado']) ?  $_SESSION['logado'] : false;
 
 
     $nomeUsuario = isset($_SESSION['nome']) ?  $_SESSION['nome'] : 'Sem nome';
 
 
-    $sql = "SELECT SUM(demandaTotal) AS 'qntTotal',SUM(demandaConcluida) AS 'qntConcluida' FROM sprint";
+    $sql = "SELECT SUM(demandaTotal) AS 'qntTotal',SUM(demandaConcluida) AS 'qntConcluida' FROM sprint WHERE usuario = $id";
     $resultado = $bd->prepare($sql);
     $resultado->execute();
     $registrosQnt = $resultado->fetchAll();
@@ -54,7 +55,7 @@
           
              <span>Novidades</span>
              <?php
-                 $sql = "SELECT * FROM sprint ORDER BY dataSprint DESC ";
+                 $sql = "SELECT * FROM sprint WHERE usuario = $id ORDER BY dataSprint DESC ";
                  $resultado = $bd->prepare($sql);
                  $resultado->execute();
                  $registrosNovidade = $resultado->fetchAll();

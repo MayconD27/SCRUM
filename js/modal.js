@@ -61,13 +61,15 @@ function deletar(id){
   })
 };
 
-function atualizar(id){
+function atualizar(id,nome,desc, demandaC, demandaT,datasprint){
+
   Swal.fire({
     title: 'ATUALIZAR SPRINT',
     html:
     '<form action="./atualizarsprint.php" method="post" id= "form">'+ 
+    '<input type=hidden name="id_sprint" id="id_input"> <br>'+
     '<input type="text" id="nome_input" class="inputmodal" name="nome" placeholder="Nome da Sprint"><br>'+
-    '<textarea name="desc" id="desc_input" cols="50" rows="10" placeholder="Descrição" ></textarea> <br>'+
+    '<textarea name="desc" id="desc_input" cols="50" rows="10" placeholder="Descrição"></textarea> <br>'+
     '<div class="numbers"> <input type="number" id="nDemand_input" name="nDemand" placeholder="Total de Demandas" class="inputmodal">'+
     '<input type="number" id="nDemandC_input" name="nDemandC" placeholder="Demandas Concluídas" class="inputmodal"> </div><br>'+
     '<input type="date" id="data_input" name="data" placeholder="Total de Demandas" class="inputmodal"><br>'+
@@ -83,4 +85,10 @@ function atualizar(id){
       form.submit()
     }
   })
+  document.getElementById('desc_input').value=desc;
+  document.getElementById('nome_input').value = nome;
+  document.getElementById('nDemandC_input').value = demandaC;
+  document.getElementById('nDemand_input').value = demandaT;
+  document.getElementById('data_input').value = datasprint;
+  document.getElementById('id_input').value = id;
 }

@@ -10,6 +10,7 @@
     }
 
     $nomeUsuario = isset($_SESSION['nome']) ?  $_SESSION['nome'] : 'Sem nome';
+    $id = $_SESSION['id'];
 ?>
 
 <!DOCTYPE html>
@@ -54,11 +55,19 @@
                     <?php
                     include_once "bd.php";
 
-                    $sql = "SELECT * FROM sprint";
+                    $sql = "SELECT * FROM sprint WHERE usuario = $id";
+                    
         
                     $resultado = $bd->query($sql);
                     $registros = $resultado->fetchAll();
                     foreach ($registros as $sprint) { 
+                        $nome =$sprint['sprint'];
+                        $descricao =$sprint['descricao'];
+                        $demandaC=$sprint['demandaConcluida'];
+                        $demandaT = $sprint['demandaTotal'];
+                        $dataSprint = $sprint["dataSprint"];
+                        
+
                         $id_sprint =openssl_encrypt(
                             $sprint['id'], "AES-256-CBC", "OKGoogle",
                         ); 
@@ -66,8 +75,8 @@
                         print ("
                             <tr class='li-sprint'>
                             <td><div class='newSprint'><h4>".$sprint["sprint"]."</h4> <p>".$sprint["descricao"]."</p> <span>".date("d/m/Y", strtotime($sprint["dataSprint"]))."</span> <div id='num'>".$sprint["demandaConcluida"]."/".$sprint["demandaTotal"]."</div> </div></td>
-                            <td><i onclick=" ."atualizar('$id_sprint')"." class='att bi bi-pencil-fill'></i></td>
-                            <td><i onclick=" ."deletar('$id_sprint')"." class='delet bi bi-archive-fill'></i></td>
+                            <td><i onclick="."atualizar('$id_sprint','$nome','$descricao','$demandaC','$demandaT','$dataSprint')"." class='att bi bi-pencil-fill'></i></td>
+                            <td><i onclick="."deletar('$id_sprint')"." class='delet bi bi-archive-fill'></i></td>
                             </tr>
                         ");
                     } 
