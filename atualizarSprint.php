@@ -13,10 +13,10 @@ include_once "bd.php";
         $id = openssl_decrypt(
             $id, "AES-256-CBC", "OKGoogle",
         );
-        $sql = "UPDATE sprint SET sprint = '$nome', descricao = ' $desc', demandaConcluida = $nDemandC, demandaTotal = $nDemand, dataSprint = '$data' WHERE id = $id";
+        $sql = "UPDATE sprint SET sprint = '$nome', descricao = :desc, demandaConcluida = $nDemandC, demandaTotal = $nDemand, dataSprint = '$data' WHERE id = $id";
 
         $resultado = $bd->prepare($sql);
-        echo $sql;
+        $resultado->bindParam(':desc', $desc);
         $registro = $resultado->execute();
         header('location: index.php');
         exit;
