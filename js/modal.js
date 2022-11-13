@@ -86,8 +86,8 @@ function atualizar(id,nome,desc, demandaC, demandaT,datasprint){
     }
   })
   
-  document.getElementById('desc_input').value=desc.replace('~~', ' ');
-  document.getElementById('nome_input').value = nome.replace('~~', ' ');
+  document.getElementById('desc_input').value= desc.replace(/\~~/g, ' ');;
+  document.getElementById('nome_input').value = nome.replace(/\~~/g, ' ');
   document.getElementById('nDemandC_input').value = demandaC;
   document.getElementById('nDemand_input').value = demandaT;
   document.getElementById('data_input').value = datasprint;
