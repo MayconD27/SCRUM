@@ -85,8 +85,9 @@ function atualizar(id,nome,desc, demandaC, demandaT,datasprint){
       form.submit()
     }
   })
-  document.getElementById('desc_input').value=desc;
-  document.getElementById('nome_input').value = nome;
+  
+  document.getElementById('desc_input').value=desc.replace('~~', ' ');
+  document.getElementById('nome_input').value = nome.replace('~~', ' ');
   document.getElementById('nDemandC_input').value = demandaC;
   document.getElementById('nDemand_input').value = demandaT;
   document.getElementById('data_input').value = datasprint;
