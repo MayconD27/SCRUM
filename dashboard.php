@@ -114,6 +114,7 @@
       var tarefas=[];
       var ideal = [];
       var real=  [];
+      var totalD= [];
       fetch("grafic.php")
 
       .then(resp => resp.json())
@@ -124,6 +125,7 @@
                   tarefas.push(scrum.sprint)
                   var dC=scrum.demandaConcluida;
                   var dT=scrum.demandaTotal;
+                  totalD.push(scrum.demandaTotal)
                   real.push((dT-dC));            
                  
 
@@ -132,14 +134,16 @@
         totalTarefas = 100/tarefas.length;
         var j =-1;
         for(var i=tarefas.length; i>0;i--){
-          
           j++
-          console.log(j)
+          console.log(totalD[j])
+          
+          
+          
           ideal[j]=totalTarefas*i;
-          real[j]= real[j]+ideal[j];
+          real[j]= ideal[j]+(totalTarefas/(totalD[j])*real[j]);
 
         }
-        console.log(ideal)
+        
         real.push(0);
         ideal.push(0);
         tarefas.push('Concluido')

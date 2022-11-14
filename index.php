@@ -76,7 +76,7 @@
                         $id_sprint =openssl_encrypt(
                             $sprint['id'], "AES-256-CBC", "OKGoogle",
                         ); 
-                        $obj = json_encode($sprint);
+                       
                           
                            echo "<tr class='li-sprint'>"; 
                            echo "<td><div class='newSprint'><h4>".$sprint["sprint"]."</h4> <p>".$sprint["descricao"]."</p> <span>".date("d/m/Y", strtotime($sprint["dataSprint"]))."</span> <div id='num'>".$sprint["demandaConcluida"]."/".$sprint["demandaTotal"]."</div> </div></td>";
@@ -85,7 +85,7 @@
                            echo "</tr>";  
                     };
                     
-                            file_put_contents("scrum.json", $obj);
+                          
                     ?>  
             </div>
            

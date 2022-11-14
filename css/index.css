@@ -40,6 +40,9 @@
     #dashboard section{
         width: 90%;
     }  
+    .li-sprint span{
+        right: 0;
+    }
 }
 *::-webkit-scrollbar {
     width: 8px;
@@ -75,11 +78,12 @@ section::-webkit-scrollbar-thumb {
     padding: 5px;
 }
 .li-sprint h4{
-    font-size: 20px;
+    font-size: 1.3em;
     font-family: arial;
     font-weight: bolder;
     color: #782b18;
     padding: 0 20px;
+    width: 55%;
 }
 .li-sprint span{
     position: absolute;
