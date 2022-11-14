@@ -109,17 +109,23 @@
     <script src="js/jquery.js"></script>
     <script src="js/jqueryCoutTo.js"></script>
     <script type="text/javascript">
-      $('.time').countTo();
+      var real;
+      fetch("scrum.json")
+      
+      .then(resp => resp.json())
+      .then(resp => real = resp.demandaTotal)
 
+      $('.time').countTo();
+ 
 
         var sprint = ['sprint1','sprint2','sprint3', 'sprint4', 'sprint5', 'sprint6'];
 
-        var real = [110, 80, 60, 45, 25, 10];
+       
         
         var ideal = [100, 80, 60, 40, 20, 10];
 
         ideal.push(0);
-        real.push(0);
+        
         sprint.push('concluido');
 
       var myChart = echarts.init(document.getElementById('grafic'));

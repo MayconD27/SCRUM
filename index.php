@@ -61,6 +61,7 @@
                     $resultado = $bd->query($sql);
                     $registros = $resultado->fetchAll();
                     foreach ($registros as $sprint) { 
+                       
                         $nome =$sprint['sprint'];
                         $descricao =$sprint['descricao'];
                         $descricao = "$descricao";
@@ -75,18 +76,16 @@
                         $id_sprint =openssl_encrypt(
                             $sprint['id'], "AES-256-CBC", "OKGoogle",
                         ); 
-                               
-                      
-                           echo "<tr class='li-sprint'>"; 
-                            echo "<td><div class='newSprint'><h4>".$sprint["sprint"]."</h4> <p>".$sprint["descricao"]."</p> <span>".date("d/m/Y", strtotime($sprint["dataSprint"]))."</span> <div id='num'>".$sprint["demandaConcluida"]."/".$sprint["demandaTotal"]."</div> </div></td>";
-
-                           echo  "<td><i onclick="."atualizar('$id_sprint','$nomesprint','$desc','$demandaC','$demandaT','$dataSprint')"." class='att bi bi-pencil-fill'></i></td>";
+                        $obj = json_encode($sprint);
                           
-                      
-                            echo "<td><i onclick="."deletar('$id_sprint')"." class='delet bi bi-archive-fill'></i></td>";
-                            echo "</tr>";  
+                           echo "<tr class='li-sprint'>"; 
+                           echo "<td><div class='newSprint'><h4>".$sprint["sprint"]."</h4> <p>".$sprint["descricao"]."</p> <span>".date("d/m/Y", strtotime($sprint["dataSprint"]))."</span> <div id='num'>".$sprint["demandaConcluida"]."/".$sprint["demandaTotal"]."</div> </div></td>";
+                           echo  "<td><i onclick="."atualizar('$id_sprint','$nomesprint','$desc','$demandaC','$demandaT','$dataSprint')"." class='att bi bi-pencil-fill'></i></td>";
+                           echo "<td><i onclick="."deletar('$id_sprint')"." class='delet bi bi-archive-fill'></i></td>";
+                           echo "</tr>";  
                     };
                     
+                            file_put_contents("scrum.json", $obj);
                     ?>  
             </div>
            
