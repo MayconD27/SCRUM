@@ -109,55 +109,77 @@
     <script src="js/jquery.js"></script>
     <script src="js/jqueryCoutTo.js"></script>
     <script type="text/javascript">
-      var real;
-      fetch("scrum.json")
-      
-      .then(resp => resp.json())
-      .then(resp => real = resp.demandaTotal)
-
       $('.time').countTo();
  
+      var tarefas=[];
+      var ideal = [];
+      var real=  [];
+      fetch("grafic.php")
 
-        var sprint = ['sprint1','sprint2','sprint3', 'sprint4', 'sprint5', 'sprint6'];
+      .then(resp => resp.json())
+      .then((resp) => {
+        resp.forEach((scrum) => {
+            // aqui coloca o que precisa fazer de cada sprint
+          
+                  tarefas.push(scrum.sprint)
+                  var dC=scrum.demandaConcluida;
+                  var dT=scrum.demandaTotal;
+                  real.push((dT-dC));            
+                 
 
-       
-        
-        var ideal = [100, 80, 60, 40, 20, 10];
+     
+        })
+        totalTarefas = 100/tarefas.length;
+        var j =-1;
+        for(var i=tarefas.length; i>0;i--){
+          
+          j++
+          console.log(j)
+          ideal[j]=totalTarefas*i;
+          real[j]= real[j]+ideal[j];
 
+        }
+        console.log(ideal)
+        real.push(0);
         ideal.push(0);
-        
-        sprint.push('concluido');
-
-      var myChart = echarts.init(document.getElementById('grafic'));
-      var option = {
-        tooltip: {},
-        legend: {
-          data: ['Tempo de Trabalho Ideal', 'Tempo de Trabalho Real']
-        },
-        xAxis: {
-          data: sprint
-        },
-        yAxis: {},
-        series: [
-          {
-            name: 'Tempo de Trabalho Ideal',
-            type: 'line',
-            data: ideal,
-            color: '#ccb5a5',
-            smooth: true
+        tarefas.push('Concluido')
+        var myChart = echarts.init(document.getElementById('grafic'));
+        var option = {
+                
+          tooltip: {},
+          legend: {
+            data: ['Tempo de Trabalho Ideal', 'Tempo de Trabalho Real']
           },
-          {
-            name: 'Tempo de Trabalho Real',
-            type: 'line',
-            data: real,
-            color: '#592c0c',
-            smooth: true
-          }
-        ]
-      };
+          xAxis: {
+            data: tarefas
+          },
+          yAxis: {},
+          series: [
+            {
+              name: 'Tempo de Trabalho Ideal',
+              type: 'line',
+              data: ideal,
+              color: '#ccb5a5',
+              smooth: true
+            },
+            {
+              name: 'Tempo de Trabalho Real',
+              type: 'line',
+              data: real,
+              color: '#592c0c',
+              smooth: true
+            }
+          ]
+        };
 
-      // Display the chart using the configuration items and data just specified.
-      myChart.setOption(option);
+            // Display the chart using the configuration items and data just specified.
+        myChart.setOption(option);
+
+      })
+      
+     
+
+
     </script>
 </body>
 
