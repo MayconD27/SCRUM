@@ -12,6 +12,11 @@
     $resultado = $bd->prepare($sql);
     $resultado->execute();
     $registrosQnt = $resultado->fetchAll();
+
+    $sql = "SELECT MAX(demandaTotal) AS 'vMax',MAX(demandaConcluida) AS 'vMaxC' FROM sprint WHERE usuario = $id";
+    $resultado =$bd->prepare($sql);
+    $resultado->execute();
+    $registroMM = $resultado->fetchAll();
 ?>
 
 
@@ -60,14 +65,18 @@
                  $resultado->execute();
                  $registrosNovidade = $resultado->fetchAll();
                  $descri = $registrosNovidade[0]['descricao'];
-                 echo "<marquee behavior='' direction=''>$descri</marquee>";
+                    echo "<marquee behavior='' direction=''>$descri</marquee>";
+                 
+                    
+
+
                 
             ?>
         </div>
 
         <div class="itens">
             <span>
-                <h3>Quantidade de Demandas</h3>
+                <h3>Quantidade de demandas</h3>
                 <?php
                   $qntDemandas = $registrosQnt[0]['qntTotal'];
                   echo " <p id='ntDemandas' data-from='0' data-to='$qntDemandas'
@@ -79,7 +88,7 @@
             </span>
 
             <span>
-                <h3>Demandas Concluidas</h3>
+                <h3>Demandas concluidas</h3>
                 <?php
                  
                   $qntConcluida = $registrosQnt[0]['qntConcluida'];
@@ -101,6 +110,33 @@
                 <i class="bi bi-x-circle"></i>
             </span>
         </div>
+        <div class="itens maior">
+        <span>
+                <h3>Maior quantidade de tarefa por sprint</h3>
+                <?php
+                  $qntMax = $registroMM[0]['vMax'];
+                  echo " <p id='ntDemandas' data-from='0' data-to='$qntMax'
+                  data-speed='2000' data-refresh-interval='50'  class='time'></p>";
+
+                ?>
+                <i class="bi bi-arrow-up-right"></i>
+
+            </span>
+
+            <span>
+                <h3>maior quantidade de tarefa concluidas  por sprint</h3>
+                <?php
+                 
+                  $qntMaxC = $registroMM[0]['vMaxC'];
+                  echo " <p id='ntDemandas' data-from='0' data-to='$qntMaxC'
+                  data-speed='2000' data-refresh-interval='50'  class='time'></p>";
+
+                ?>
+                <i class="bi bi-hand-thumbs-up"></i>
+            </span>
+
+        </div>
+
          <div id="grafic"></div>
 
 
@@ -121,27 +157,18 @@
       .then((resp) => {
         resp.forEach((scrum) => {
             // aqui coloca o que precisa fazer de cada sprint
-          
-                  tarefas.push(scrum.sprint)
-                  var dC=scrum.demandaConcluida;
-                  var dT=scrum.demandaTotal;
-                  totalD.push(scrum.demandaTotal)
-                  real.push((dT-dC));            
-                 
-
-     
+            tarefas.push(scrum.sprint)
+            var dC=scrum.demandaConcluida;
+            var dT=scrum.demandaTotal;
+            totalD.push(scrum.demandaTotal)
+            real.push((dT-dC));            
         })
         totalTarefas = 100/tarefas.length;
         var j =-1;
         for(var i=tarefas.length; i>0;i--){
           j++
-          console.log(totalD[j])
-          
-          
-          
           ideal[j]=totalTarefas*i;
           real[j]= ideal[j]+(totalTarefas/(totalD[j])*real[j]);
-
         }
         
         real.push(0);

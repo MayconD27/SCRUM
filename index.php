@@ -31,19 +31,16 @@
 
 <body>
 
-        <input type="checkbox" id="check" checked>
-        <label for="check" ><i class="bi bi-list" id="icone"></i></label>
-        <header>
+    <input type="checkbox" id="check" checked>
+    <label for="check" ><i class="bi bi-list" id="icone"></i></label>
+    <header>
           <?php  echo "<h2 id='nome'>$nomeUsuario</h2>" ?> <i class="bi bi-person-fill"></i>
-        </header>
+    </header>
 
     <div class="barra">	
         <nav>
             <a href="index.php"><div class="link"><i class="bi bi-diagram-3-fill"></i> Sprint</div></a>
             <a href="dashboard.php"><div class="link"><i class="bi bi-graph-down"></i>  Gráfico de Bundown </div></a>
-
-            
-         
         </nav>	
         <a href="logout.php" class="sair"><i class="bi bi-house"></i><p>sair</p></a>
     </div>
@@ -53,14 +50,14 @@
             <div class="cont">
                 <table id="sprints">
                     <?php
-                    include_once "bd.php";
+                        include_once "bd.php";
 
-                    $sql = "SELECT * FROM sprint WHERE usuario = $id";
+                        $sql = "SELECT * FROM sprint WHERE usuario = $id";
                     
         
-                    $resultado = $bd->query($sql);
-                    $registros = $resultado->fetchAll();
-                    foreach ($registros as $sprint) { 
+                        $resultado = $bd->query($sql);
+                        $registros = $resultado->fetchAll();
+                        foreach ($registros as $sprint) { 
                        
                         $nome =$sprint['sprint'];
                         $descricao =$sprint['descricao'];
