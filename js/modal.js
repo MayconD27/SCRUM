@@ -47,9 +47,9 @@ function deletar(id){
       fetch('./deletsprint.php', configuracao)
       .then(function(response) {
         Swal.fire(
-          'Deleted!',
-          'Your file has been deleted.',
-          'success'
+          'Deletado!',
+          'Sua Sprint foi deletada',
+          'success',
         ).then((result)=>{
           location.reload();
         })

@@ -59,19 +59,19 @@
         <div class="novidades">
           
              <span>Novidades</span>
+             <marquee behavior='' direction=''>
              <?php
                  $sql = "SELECT * FROM sprint WHERE usuario = $id ORDER BY dataSprint DESC ";
                  $resultado = $bd->prepare($sql);
                  $resultado->execute();
                  $registrosNovidade = $resultado->fetchAll();
-                 $descri = $registrosNovidade[0]['descricao'];
-                    echo "<marquee behavior='' direction=''>$descri</marquee>";
-                 
-                    
+                 if(count ($registrosNovidade)>0){
+                    $descri = $registrosNovidade[0]['descricao'];
+                    echo "$descri"; 
+                 }
 
-
-                
             ?>
+            </marquee>
         </div>
 
         <div class="itens">
@@ -124,7 +124,7 @@
             </span>
 
             <span>
-                <h3>maior quantidade de tarefa concluidas  por sprint</h3>
+                <h3>Maior quantidade de tarefa concluidas  por sprint</h3>
                 <?php
                  
                   $qntMaxC = $registroMM[0]['vMaxC'];

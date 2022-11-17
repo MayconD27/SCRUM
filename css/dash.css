@@ -79,6 +79,7 @@ span p{
 .maior span{
     width: 37.5%;
     min-width: 200px;
+    max-width: 460px;
 }
 .maior span:last-child{
     background-color: #a5b958;

@@ -169,6 +169,9 @@ label{
 
 }
 }
+.bi-box-arrow-down{
+    margin-left: 10px ;
+}
 .btnEntrar:hover .bi-arrow-right{
     position: relative;
     translate: 5px;
