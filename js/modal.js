@@ -31,7 +31,7 @@ function deletar(id){
     text: "Fazendo isso você não terá mais acesso a ela.",
     icon: 'warning',
     showCancelButton: true,
-    confirmButtonColor: '#3085d6',
+    confirmButtonColor: '#a5b958',
     cancelButtonColor: '#d33',
     confirmButtonText: 'Sim, Deletar!',
     cancelButtonText: 'Cancelar'

@@ -21,6 +21,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portal do Usuario</title>
+    <script src="js/sweetalert2.js"></script>
     <link rel="stylesheet" href="css/portal.css">
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/modal.css">
@@ -92,7 +93,7 @@
 
         <button id="addSprint"> <i class="bi bi-plus-lg"></i> Nova Sprint</button>
     </div>
-    <script src="js/sweetalert2.js"></script>
+
     <script src="js/jquery.js"></script>   
     <script src="js/modal.js"></script>
     <script src="js/script.js"></script>

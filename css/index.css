@@ -129,3 +129,7 @@ section::-webkit-scrollbar-thumb {
 .swal2-html-container{
     color: #6a2210;
 }
+.swal2-styled.swal2-confirm {
+    background-color: #782b18;
+
+}
