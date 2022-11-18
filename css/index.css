@@ -36,14 +36,7 @@
     width: 75%;
     box-sizing: border-box;
 }
-@media only screen and (max-width: 600px) {
-    #dashboard section{
-        width: 90%;
-    }  
-    .li-sprint span{
-        right: 0;
-    }
-}
+
 *::-webkit-scrollbar {
     width: 8px;
   }
@@ -132,4 +125,22 @@ section::-webkit-scrollbar-thumb {
 .swal2-styled.swal2-confirm {
     background-color: #782b18;
 
+}
+.img-aa{
+    z-index: 9999;
+    max-width: 500px;
+    opacity: .8;
+    margin: 0 auto;
+    display: block;
+}
+@media only screen and (max-width: 600px) {
+    #dashboard section{
+        width: 90%;
+    }  
+    .li-sprint span{
+        right: 0;
+    }
+    .img-aa{
+        max-width: 335px;
+    }
 }

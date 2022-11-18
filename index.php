@@ -25,9 +25,7 @@
     <link rel="stylesheet" href="css/portal.css">
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/modal.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
-    
-    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">   
 </head>
 
 <body>
@@ -45,10 +43,11 @@
         </nav>	
         <a href="logout.php" class="sair"><i class="bi bi-house"></i><p>sair</p></a>
     </div>
-
+    
     <div id="dashboard">
         <section>
             <div class="cont">
+            
                 <table id="sprints">
                     <?php
                         include_once "bd.php";
@@ -69,22 +68,33 @@
 
                         $desc = str_replace(' ', '~~', $descricao);
                         $nomesprint = str_replace(' ', '~~',     $nome);
-                        
+                        $validar=true;
 
                         $id_sprint =openssl_encrypt(
                             $sprint['id'], "AES-256-CBC", "OKGoogle",
                         ); 
                        
-                          
+                          if(count($registros)>0){
                            echo "<tr class='li-sprint'>"; 
                            echo "<td><div class='newSprint'><h4>".$sprint["sprint"]."</h4> <p>".$sprint["descricao"]."</p> <span>".date("d/m/Y", strtotime($sprint["dataSprint"]))."</span> <div id='num'>".$sprint["demandaConcluida"]."/".$sprint["demandaTotal"]."</div> </div></td>";
                            echo  "<td><i onclick="."atualizar('$id_sprint','$nomesprint','$desc','$demandaC','$demandaT','$dataSprint')"." class='att bi bi-pencil-fill'></i></td>";
                            echo "<td><i onclick="."deletar('$id_sprint')"." class='delet bi bi-archive-fill'></i></td>";
                            echo "</tr>";  
+                           $validar =true;
+                           }else{
+                                $validar=false;
+                           }
                     };
                     
                           
                     ?>  
+                </table>
+                <?php
+                    if($validar==false){
+                        echo "<img src='img/SCRUM.png' alt=''class='img-aa'>";
+                    }
+                    
+                ?>
             </div>
            
            
