@@ -1,7 +1,7 @@
 *{
     font-family: arial;
 }
-#addSprint{
+.addSprint{
     background-color: #782b18;
     font-size: 20px;
     color: #e8c8c0;
@@ -15,12 +15,34 @@
     z-index: 99;
 
 }
-#addSprint:hover{
+.nSprint{
+    position: relative;
+    width: 100%;
+    max-width: 700px;
+    flex-wrap: wrap;
+}
+.cxBtn{
+    position: absolute;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    bottom: 180px;
+}
+.addSprint2{
+    background-color: #782b18;
+    font-size: 20px;
+    color: #e8c8c0;
+    border: none;
+    padding: 5px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.addSprint:hover{
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.182);
     transition: .5s;
 }
 
-#addSprint:hover i{
+.addSprint:hover i{
     text-shadow: 0 0 10px rgb(234, 255, 1);
     transition: .5s;
 }
@@ -127,7 +149,6 @@ section::-webkit-scrollbar-thumb {
 
 }
 .img-aa{
-    z-index: 9999;
     max-width: 100%;
     opacity: .9;
     margin: 0 auto;

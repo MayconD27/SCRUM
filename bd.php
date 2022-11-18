@@ -2,18 +2,18 @@
 
 /* Credenciais do banco de dados. Supondo que você esteja executando o MySQL
 servidor com configuração padrão (usuário 'root' sem senha) */
-/*
+
 define('DB_SERVER', 'localhost');
 define('DB_USERNAME', 'root');
 define('DB_PASSWORD', '');
 define('DB_NAME', 'scrum');
-*/
 
+/*
 define('DB_SERVER', 'sprints-grafico.mysql.uhserver.com');
 define('DB_USERNAME', 'sprints_grafico');
 define('DB_PASSWORD', 'FtAC@ffTb8Pq8i.');
 define('DB_NAME', 'sprints_grafico');
-
+*/
 
 try{
     $bd = new PDO("mysql:host=" . DB_SERVER . ";dbname=" 

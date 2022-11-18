@@ -91,7 +91,10 @@
                 </table>
                 <?php
                     if($validar==false){
-                        echo "<img src='img/SCRUM.png' alt=''class='img-aa'>";
+                        echo "<div class='nSprint'>";
+                        echo "<img src='img/SCRUM.png' alt=''class='img-aa'> <br>";
+                        echo "<div class='cxBtn'><button id='addSprint' class='addSprint2'> <i class='bi bi-plus-lg'></i> Nova Sprint</button></div>";
+                        echo "</div>";
                     }
                     
                 ?>
@@ -101,7 +104,11 @@
         </section>
 
 
-        <button id="addSprint"> <i class="bi bi-plus-lg"></i> Nova Sprint</button>
+        <?php
+         if(count($registros)>0){
+            echo "<button id='addSprint' class='addSprint'> <i class='bi bi-plus-lg'></i> Nova Sprint</button>";
+         }
+        ?>
     </div>
 
     <script src="js/jquery.js"></script>   

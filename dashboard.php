@@ -112,7 +112,7 @@
         </div>
         <div class="itens maior">
         <span>
-                <h3>Maior quantidade de tarefa por sprint</h3>
+                <h3>Maior quantidade de demandas por sprint</h3>
                 <?php
                   $qntMax = $registroMM[0]['vMax'];
                   echo " <p id='ntDemandas' data-from='0' data-to='$qntMax'
@@ -124,7 +124,7 @@
             </span>
 
             <span>
-                <h3>Maior quantidade de tarefa concluidas  por sprint</h3>
+                <h3>Maior quantidade de demandas concluidas  por sprint</h3>
                 <?php
                  
                   $qntMaxC = $registroMM[0]['vMaxC'];
