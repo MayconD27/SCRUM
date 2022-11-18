@@ -128,8 +128,8 @@ section::-webkit-scrollbar-thumb {
 }
 .img-aa{
     z-index: 9999;
-    max-width: 500px;
-    opacity: .8;
+    max-width: 100%;
+    opacity: .9;
     margin: 0 auto;
     display: block;
 }
@@ -141,6 +141,6 @@ section::-webkit-scrollbar-thumb {
         right: 0;
     }
     .img-aa{
-        max-width: 335px;
+        max-width: 100%;
     }
 }
