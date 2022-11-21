@@ -17,16 +17,16 @@
 }
 .nSprint{
     position: relative;
-    width: 100%;
-    max-width: 700px;
+    width: 80%;
     flex-wrap: wrap;
+    margin: 10px auto;
 }
 .cxBtn{
     position: absolute;
     width: 100%;
     display: flex;
     justify-content: center;
-    bottom: 180px;
+    bottom: 140px;
 }
 .addSprint2{
     background-color: #782b18;
@@ -150,7 +150,7 @@ section::-webkit-scrollbar-thumb {
 }
 .img-aa{
     max-width: 100%;
-    opacity: .9;
+    opacity: .8;
     margin: 0 auto;
     display: block;
 }
